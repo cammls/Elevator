@@ -6,7 +6,6 @@
     "axios": "^0.16.0",
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
-    "foreman": "^2.0.0",
     "mongoose": "^4.9.2",
     "nodemon": "^1.11.0",
     "react": "^15.4.2",
