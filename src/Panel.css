@@ -8,8 +8,32 @@
   border-radius: 55px;
   height: 70px;
   width: 70px;
-  font-size: 24px
+  font-size: 24px;
+  display: inline-block;
+  margin: 7px;
 }
 .highlighted {
   background-color: #fcfc76;
+}
+.openclose {
+  border: 2px solid;
+  border-radius: 55px;
+  height: 20px;
+  width: 70px;
+  text-align: center;
+  display: inline-block;
+}
+.open {
+  background-color: #3ea05c;
+  display: inline-block;
+
+}
+.close {
+  background-color: #ad4d3c;
+}
+.updown {
+  display: inline-block;
+  margin-left: 50px;
+  /*height: 50px;
+  width: 20px;*/
 }

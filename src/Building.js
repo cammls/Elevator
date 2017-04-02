@@ -35,7 +35,7 @@ export class Button extends React.Component {
   render() {
     return (
       <button className="square" onClick={() => this.props.onClick()} >
-      <img src="http://www.freeiconspng.com/uploads/push-button-icon-png-2.png" height="64" width="64"/>
+      <img src="http://www.freeiconspng.com/uploads/push-button-icon-png-2.png" height="50" width="50"/>
       </button>
     );
   }
@@ -112,7 +112,7 @@ export class Board extends React.Component {
 class Building extends React.Component {
   render() {
     return (
-      <div className="building">>
+      <div className="building">
           <Board funcOnclick={this.props.funcOnclick} funcCheck={this.props.funcCheck} />
       </div>
     );

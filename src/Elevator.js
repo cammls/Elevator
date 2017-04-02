@@ -8,17 +8,25 @@ class ElevatorWrapper extends React.Component {
 
     super(props);
     this.state = { currentFloor: 3,
-                  targetFloor: 3};
+                  targetFloor: 3,
+                  doorStatus: true,
+                  isMoving: false,
+                  movingUp: false};
   }
   // componentDidMount() {
   //   console.log(this)
   // }
   handleClick(i) {
-    this.setState({ targetFloor: i }, function(){
-        //  console.log(this.state.targetFloor)
-    });
+    var that = this;
+    this.setState({ doorStatus: false, isMoving:true})
+    if (this.state.currentFloor < i) {
+      this.setState({movingUp: true})
+    }
+    setTimeout(function(){
+      that.setState({ targetFloor: i, doorStatus: true, isMoving:false });
+    }, 1000)}
 
-  }
+
   checkElevator(i){
     if (this.state.targetFloor == i )
     {
@@ -34,7 +42,7 @@ class ElevatorWrapper extends React.Component {
     return (
       <div>
       <Building funcOnclick={this.handleClick.bind(this)} funcCheck={this.checkElevator.bind(this)} />
-      <Panel funcOnclick={this.handleClick.bind(this)} funcCheck={this.checkElevator.bind(this)}/>
+      <Panel funcOnclick={this.handleClick.bind(this)} funcCheck={this.checkElevator.bind(this)} state={this.state}/>
       </div>
     );
   }
