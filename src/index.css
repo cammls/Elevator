@@ -4,10 +4,7 @@ body {
   font-family: sans-serif;
 
 }
-#building {
-   display: inline-block;
-}
-#panel {
-  display: inline-block;
-  margin-left: 100px;
+
+#clock {
+  margin-left: 200px;
 }

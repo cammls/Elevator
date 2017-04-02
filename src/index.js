@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import Building from './Building';
-import Panel from './Panel';
 import Clock from './Clock';
+import ElevatorWrapper from './Elevator';
 import './index.css';
 
 ReactDOM.render(
@@ -11,18 +10,11 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-
   ReactDOM.render(
     <Clock />,
     document.getElementById('clock')
   );
-
-
-ReactDOM.render(
-  <Building />,
-  document.getElementById('building')
-);
-ReactDOM.render(
-  <Panel />,
-  document.getElementById('panel')
-);
+  ReactDOM.render(
+    <ElevatorWrapper />,
+    document.getElementById('elevator')
+  );

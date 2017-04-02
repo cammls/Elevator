@@ -1,7 +1,5 @@
 .panel {
-  height: 200px;
-  width: 200px;
-  border: 1px solid #999;
- /*display: inline-block;*/
- /*float: right;*/
+  height: 400px;
+  width: 300px;
+  border: 2px solid #999;
 }

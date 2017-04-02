@@ -1,0 +1,10 @@
+.building {
+   display: inline-block;
+    vertical-align: middle;
+   margin-left: 150px;
+}
+.panel {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 200px;
+}
