@@ -42,29 +42,6 @@ export class Button extends React.Component {
 }
 
 export class Board extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = { currentFloor: 3,
-  //                 targetFloor: 3};
-  // }
-  // handleClick(i) {
-  //   this.setState({ targetFloor: i }, function(){
-  //        console.log(this.state.targetFloor)
-  //   });
-  //
-  // }
-  // checkElevator(i){
-  //   // console.log("target:"+this.state.targetFloor+" current:"+this.state.currentFloor)
-  //   if (this.state.targetFloor == i )
-  //   {
-  //     this.state.currentFloor= i;
-  //     return true
-  //   }
-  //   else {
-  //     return false
-  //   }
-  // }
-
   renderSquare(i) {
     return <Square value={i}/>;
   }

@@ -20,7 +20,6 @@ class ElevatorWrapper extends React.Component {
 
   }
   checkElevator(i){
-    console.log(this)
     if (this.state.targetFloor == i )
     {
       this.state.currentFloor= i;
@@ -35,7 +34,7 @@ class ElevatorWrapper extends React.Component {
     return (
       <div>
       <Building funcOnclick={this.handleClick.bind(this)} funcCheck={this.checkElevator.bind(this)} />
-      <Panel />
+      <Panel funcOnclick={this.handleClick.bind(this)} funcCheck={this.checkElevator.bind(this)}/>
       </div>
     );
   }
