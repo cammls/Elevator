@@ -16,47 +16,67 @@ class Square extends React.Component {
 class Elevator extends React.Component {
 
   render() {
-    var elevator = ""
-    if(this.props.floor == 3)
+     console.log(this.props)
+    var elevator = "";
+    if(this.props.elevator)
     {
       elevator =(<img src="https://d30y9cdsu7xlg0.cloudfront.net/png/19176-200.png" height="64" width="64"/>)
     }
     return (
-      <button className="square">
-        {elevator}
+  <button className="square">
+    {elevator}
       </button>
     );
   }
 }
 
 class Button extends React.Component {
-  constructor() {
-    super();
-  }
-  callElevator = () => {
-      console.log('floor :', this.props.floor);
-    }
 
   render() {
     return (
-      <button className="square" onClick={this.callElevator} >
+      <button className="square" onClick={() => this.props.onClick()} >
+      <img src="http://www.freeiconspng.com/uploads/push-button-icon-png-2.png" height="64" width="64"/>
       </button>
     );
   }
 }
 
 class Board extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { currentFloor: 3,
+                  targetFloor: null};
+  }
+  handleClick(i) {
+    this.setState({ targetFloor: i }, function(){
+        console.log(this.state.targetFloor)
+
+    });
+
+  }
+  checkElevator(i){
+    console.log("target:"+this.state.targetFloor+" current:"+this.state.currentFloor)
+
+    if (this.state.targetFloor == i )
+    {
+      this.state.currentFloor= i;
+      return true
+    }
+    else {
+      return false
+    }
+
+  }
   renderSquare(i) {
     return <Square value={i}/>;
   }
   renderButton(i) {
-    return <Button floor={i}/>;
+    return <Button floor={i} onClick={() => this.handleClick(i)}/>;
   }
   renderElevator(i) {
-    return <Elevator floor={i}/>;
+    return <Elevator floor={i} elevator={this.checkElevator(i)}/>;
   }
   render() {
-    //const status = 'Next player: X';
     return (
       <div>
         <div className="board-row">
@@ -117,14 +137,8 @@ class Board extends React.Component {
 class Building extends React.Component {
   render() {
     return (
-      <div className="game">
-        <div className="game-board">
+      <div>
           <Board />
-        </div>
-        <div className="game-info">
-          <div>{/* status */}</div>
-          <ol>{/* TODO */}</ol>
-        </div>
       </div>
     );
   }
