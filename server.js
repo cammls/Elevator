@@ -19,14 +19,14 @@ var router = express.Router();
 var port = 3001;
 
 // MLAB
-// mongoose.connect('mongodb://elevator:elevator@ds135800.mlab.com:35800/elevator');
-//   mongoose.connection.on('connected', function () {
-//     console.log('Mongoose Mlab connection');
-//   });
-mongoose.connect('mongodb://localhost/webac');
+mongoose.connect('mongodb://elevator:elevator@ds135800.mlab.com:35800/elevator');
   mongoose.connection.on('connected', function () {
-    console.log('Mongoose local connection');
+    console.log('Mongoose Mlab connection');
   });
+// mongoose.connect('mongodb://localhost/webac');
+//   mongoose.connection.on('connected', function () {
+//     console.log('Mongoose local connection');
+//   });
 
   router.get('/', function(req, res) {
     res.json({ message: 'API Initialized!'});
