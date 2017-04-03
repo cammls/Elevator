@@ -26,10 +26,10 @@ class Logs extends React.Component {
  }
  componentDidMount() {
  this.loadLogsFromServer();
- // setInterval(this.loadCommentsFromServer, this.props.pollInterval);
+  setInterval(this.loadLogsFromServer, 2000);
  }
   render() {
-     console.log(this.state.logs)
+    //  console.log(this.state.logs)
     return (
       <div className="logs">
       <h2>Elevator logs:</h2>
