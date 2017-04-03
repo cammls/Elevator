@@ -5,10 +5,10 @@ class LogList extends React.Component {
   render() {
     var logs = this.props.logs.map(function(log) {
               if (log.currentFloor){
-             return <div key={log._id}>{log.currentFloor} -> {log.targetFloor}</div>;
+             return <li key={log._id}>{log.currentFloor} -> {log.targetFloor}</li>;
            }
          });
-         return <div>{logs}</div>;
+         return <ol>{logs}</ol>;
   }
 }
 
